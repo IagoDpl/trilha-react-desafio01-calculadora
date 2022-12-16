@@ -34,7 +34,16 @@ const App = () => {
     }
 
   }
+  const handleTimesNumbers = () => {
+    setFirstNumber(firstNumber) * Number(currentNumber)
+    setCurrentNumber('0')
+    setOperation('*')
+  }
 
+  const handleDividedNumbers = () =>
+    setFirstNumber(firstNumber) / Number(currentNumber)
+    setCurrentNumber('0')
+    setOperation('/')
   const handleMinusNumbers = () => {
 
     if(firstNumber === '0'){
@@ -71,8 +80,8 @@ const App = () => {
       <Content>
         <Input value={currentNumber}/>
         <Row>
-          <Button label="x"/>
-          <Button label="/"/>
+          <Button label="x" onClick={handleTimesNumbers}/>
+          <Button label="/"onClick={handleDividedNumbers}/>
           <Button label="c" onClick={handleOnClear}/>
           <Button label="."/>
         </Row>
